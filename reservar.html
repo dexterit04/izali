@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar - IZALI</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor-header">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png.jpeg" alt="IZALI Florería" class="logo-img">
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="flores.html">Flores</a></li>
+                    <li><a href="bouquets.html">Bouquets</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="reservar.html" class="activo">Reservar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="seccion">
+        <h1 class="titulo-seccion">Reserva tu arreglo</h1>
+        <p class="subtitulo">Completa el formulario y nos pondremos en contacto contigo.</p>
+
+        <!-- FORMULARIO CON FORMSUBMIT (AJAX) -->
+        <form 
+            class="formulario" 
+            id="formReserva" 
+            action="https://formsubmit.co/izaliflor@gmail.com" 
+            method="POST" 
+            novalidate>
+
+            <!-- ⚙️ CONFIGURACIÓN DE FORMSUBMIT -->
+            <input type="hidden" name="_subject" value="🌸 Nueva reserva de IZALI">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_replyto" value="email">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="campo">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej: Ana García">
+            </div>
+
+            <div class="campo">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+            </div>
+
+            <div class="campo">
+                <label for="telefono">Teléfono *</label>
+                <input type="tel" id="telefono" name="telefono" required placeholder="5551234567">
+            </div>
+
+            <div class="campo">
+                <label for="tipo">Tipo de arreglo *</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Bouquet Romance">Bouquet Romance</option>
+                    <option value="Bouquet Primaveral">Bouquet Primaveral</option>
+                    <option value="Bouquet Alegría">Bouquet Alegría</option>
+                    <option value="Bouquet Elegante">Bouquet Elegante</option>
+                    <option value="Bouquet Amistad">Bouquet Amistad</option>
+                    <option value="Bouquet Premium IZALI">Bouquet Premium IZALI</option>
+                    <option value="Arreglo personalizado">Arreglo personalizado</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="fecha">Fecha de entrega *</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+
+            <div class="campo">
+                <label for="hora">Hora aproximada de entrega</label>
+                <input type="time" id="hora" name="hora">
+            </div>
+
+            <div class="campo">
+                <label for="direccion">Dirección de entrega *</label>
+                <input type="text" id="direccion" name="direccion" required placeholder="Calle, número, colonia, ciudad">
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">Mensaje o dedicatoria (opcional)</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe la dedicatoria que quieres incluir en la tarjeta..."></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="notas">Notas adicionales (opcional)</label>
+                <textarea id="notas" name="notas" rows="3" placeholder="Ej: Preferencias de color, si es sorpresa, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primario" style="align-self: center; min-width: 220px;" id="btnEnviar">
+                🌸 Enviar reserva
+            </button>
+
+            <!-- Mensaje de éxito que aparece sin salir de la página -->
+            <div id="mensajeExito" class="mensaje-exito" style="display:none;">
+                <h3>¡Gracias por tu reserva! 🌷</h3>
+                <p>Hemos recibido tu pedido. Te contactaremos pronto para confirmar.</p>
+            </div>
+
+            <!-- Mensaje de error -->
+            <div id="mensajeError" class="mensaje-error" style="display:none;">
+                <h3>⚠️ Ups, algo salió mal</h3>
+                <p>Por favor intenta de nuevo o contáctanos por WhatsApp.</p>
+            </div>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div><h3>🌸 IZALI</h3><p>Flores que cuentan historias.</p></div>
+            <div>
+                <h4>Contacto</h4>
+                <p>📍 Av. de las Flores 123</p>
+                <p>📞 +52 555 123 4567</p>
+                <p>✉️ hola@izali.com</p>
+            </div>
+            <div>
+                <h4>Redes Sociales</h4>
+                <ul class="redes">
+                    <li>
+                        <a href="https://www.instagram.com/izali.fl?mdxt=MWFzYnc0ajNnMmxjNQ%3D%3D&utm_source=qr" 
+                           target="_blank" rel="noopener noreferrer">
+                             Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/share/1CXx3NkuYP/?mibextid=wwXIfr" 
+                           target="_blank" rel="noopener noreferrer">
+                             Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">© 2026 IZALI - Proyecto escolar.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

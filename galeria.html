@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - IZALI</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor-header">
+            <a href="index.html" class="logo">
+                <img src="img/logo.png.jpeg" alt="IZALI Florería" class="logo-img">
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="flores.html">Flores</a></li>
+                    <li><a href="bouquets.html">Bouquets</a></li>
+                    <li><a href="galeria.html" class="activo">Galería</a></li>
+                    <li><a href="reservar.html">Reservar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="seccion">
+        <h1 class="titulo-seccion">Galería IZALI</h1>
+        <p class="subtitulo">Un vistazo a nuestros arreglos y momentos favoritos.</p>
+
+        <!-- VIDEO -->
+        <div class="video-contenedor">
+                <h2 class="subtitulo-video">Conoce nuestra florería</h2>
+                <video controls width="100%">
+                <source src="videos/izali.mp4.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+
+        <!-- GALERÍA DE IMÁGENES -->
+        <h2 class="subtitulo-video">Nuestros trabajos</h2>
+        <div class="galeria" id="galeria">
+            <img src="img/galeria1.jpg" alt="Arreglo floral 1" onerror="this.src='https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=500'">
+            <img src="img/galeria2.jpg" alt="Arreglo floral 2" onerror="this.src='https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=500'">
+            <img src="img/galeria3.jpg" alt="Arreglo floral 3" onerror="this.src='https://images.unsplash.com/photo-1502977249166-824b3a8a4d6d?w=500'">
+            <img src="img/galeria4.jpg" alt="Arreglo floral 4" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500'">
+            <img src="img/galeria5.jpg" alt="Arreglo floral 5" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500'">
+            <img src="img/galeria6.jpg" alt="Arreglo floral 6" onerror="this.src='https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500'">
+            <img src="img/galeria7.jpg" alt="Arreglo floral 7" onerror="this.src='https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=500'">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.kdry8nJ9fgVZVWBzrOrpdgHaJ4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Arreglo floral 8" onerror="this.src='https://images.unsplash.com/photo-1587883012610-e3df17d41270?w=500'">
+        </div>
+    </section>
+
+    <!-- Lightbox para ampliar imágenes -->
+    <div id="lightbox" class="lightbox">
+        <span class="cerrar-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+
+   <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div>
+                <h3> IZALI</h3>
+                <p>Flores que cuentan historias.</p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>📍 Av. de las Flores 123, Altamira</p>
+                <p>📞 +52 555 123 4567</p>
+                <p>✉️ izaliflor@gmail.com</p>
+            </div>
+            <div>
+                <h4>Redes Sociales</h4>
+                <ul class="redes">
+                    <li><a href="https://www.facebook.com/share/1CXx3NkuYP/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/izali.fl?mdxt=MWFzYnc0ajNnMmxjNQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright">© 2026 IZALI - Proyecto escolar. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
