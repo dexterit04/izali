@@ -1,11 +1,11 @@
 /* ============================================
    IZALI - Florería | JavaScript principal
-   Versión con FormSubmit AJAX (sin recargar página)
+   Versión con FormSubmit AJAX
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ---------- 1. Menú móvil (hamburguesa) ---------- */
+    /* ---------- 1. Menú móvil ---------- */
     const menuToggle = document.getElementById('menuToggle');
     const nav = document.getElementById('nav');
 
@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ---------- 3. Formulario con AJAX (FormSubmit) ---------- */
+    /* ---------- 3. Formulario de reserva con AJAX ---------- */
     const formReserva = document.getElementById('formReserva');
 
     if (formReserva) {
-        // Impedir fechas en el pasado
+        // Bloquear fechas pasadas
         const fechaInput = document.getElementById('fecha');
         if (fechaInput) {
             const hoy = new Date().toISOString().split('T')[0];
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         formReserva.addEventListener('submit', async (e) => {
-            e.preventDefault();
+            e.preventDefault();  // ← Evita que te saque de la página
 
             // --- Capturar valores ---
             const nombre = document.getElementById('nombre').value.trim();
@@ -115,17 +115,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (respuesta.ok) {
-                    // Éxito ✅
+                    // ✅ Éxito
                     formReserva.reset();
-                    formReserva.style.display = 'none';
+                    formReserva.querySelectorAll('.campo, #btnEnviar').forEach(el => {
+                        el.style.display = 'none';
+                    });
                     mensajeExito.style.display = 'block';
                     mensajeExito.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {
-                    throw new Error('Error del servidor');
+                    throw new Error('Error del servidor: ' + respuesta.status);
                 }
             } catch (error) {
-                // Error ❌
-                console.error('Error:', error);
+                // ❌ Error
+                console.error('Error al enviar:', error);
                 mensajeError.style.display = 'block';
                 boton.textContent = '🌸 Enviar reserva';
                 boton.disabled = false;
