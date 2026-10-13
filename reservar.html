@@ -10,7 +10,7 @@
     <header class="header">
         <div class="contenedor-header">
             <a href="index.html" class="logo">
-                <img src="img/logo.png.jpeg" alt="IZALI Florería" class="logo-img">
+                <img src="img/logo.png" alt="IZALI Florería" class="logo-img">
             </a>
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
             <nav class="nav" id="nav">
@@ -43,7 +43,8 @@
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_replyto" value="email">
             <input type="text" name="_honey" style="display:none">
-            <input type="hidden" name="_next" value="https://dexterit04.github.io/izali/gracias.html">
+
+            <!-- ⚠️ NO incluir _next. El AJAX maneja la respuesta -->
 
             <div class="campo">
                 <label for="nombre">Nombre completo *</label>
@@ -103,7 +104,7 @@
                 🌸 Enviar reserva
             </button>
 
-            <!-- Mensaje de éxito que aparece sin salir de la página -->
+            <!-- Mensaje de éxito (aparece sin salir de la página) -->
             <div id="mensajeExito" class="mensaje-exito" style="display:none;">
                 <h3>¡Gracias por tu reserva! 🌷</h3>
                 <p>Hemos recibido tu pedido. Te contactaremos pronto para confirmar.</p>
@@ -132,19 +133,19 @@
                     <li>
                         <a href="https://www.instagram.com/izali.fl?mdxt=MWFzYnc0ajNnMmxjNQ%3D%3D&utm_source=qr" 
                            target="_blank" rel="noopener noreferrer">
-                             Instagram
+                            📷 Instagram
                         </a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com/share/1CXx3NkuYP/?mibextid=wwXIfr" 
                            target="_blank" rel="noopener noreferrer">
-                             Facebook
+                            📘 Facebook
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <p class="copyright">© 2026 IZALI - Proyecto escolar.</p>
+        <p class="copyright">© 2025 IZALI - Proyecto escolar.</p>
     </footer>
 
     <script src="js/script.js"></script>
